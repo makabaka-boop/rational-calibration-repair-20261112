@@ -1,0 +1,21 @@
+{
+  "variables": ["x"],
+  "noises": ["n"],
+  "observations": [
+    {
+      "id": "o1",
+      "value": "2/1",
+      "terms": {"x": "1/1"},
+      "noise_terms": {"n": "1/1"}
+    },
+    {
+      "id": "o2",
+      "value": "2/1",
+      "terms": {"x": "1/1"},
+      "noise_terms": {"n": "-1/1"}
+    }
+  ],
+  "balances": [
+    {"id": "b1", "terms": {"x": "1/1"}, "value": "3/1"}
+  ]
+}

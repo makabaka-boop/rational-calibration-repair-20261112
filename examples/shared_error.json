@@ -1,0 +1,25 @@
+{
+  "variables": ["a", "b"],
+  "noises": ["e1", "e2"],
+  "observations": [
+    {
+      "id": "m1",
+      "value": "10/1",
+      "terms": {"a": "1/1"},
+      "noise_terms": {"e1": "1/1"}
+    },
+    {
+      "id": "m2",
+      "value": "12/1",
+      "terms": {"b": "1/1"},
+      "noise_terms": {"e1": "1/1"}
+    },
+    {
+      "id": "m3",
+      "value": "3/1",
+      "terms": {"a": "1/1", "b": "1/1"},
+      "noise_terms": {"e2": "1/1"}
+    }
+  ],
+  "balances": []
+}
