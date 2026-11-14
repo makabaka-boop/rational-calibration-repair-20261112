@@ -53,6 +53,11 @@ def main(argv: list[str] | None = None) -> int:
     except (StrictJSONError, ValidationError) as exc:
         print(f"输入被拒绝: {exc}", file=sys.stderr)
         return 1
+    except ArithmeticError as exc:
+        # 精确求解内部出现的不相容（正常输入不会触发）：明确报告求解失败，
+        # 而不是当作“无解”或静默写出错误结果。
+        print(f"求解失败（内部精确运算异常）: {exc}", file=sys.stderr)
+        return 1
     except UnicodeDecodeError as exc:
         print(f"输入被拒绝: 不是合法 UTF-8 文本（{exc.reason}，"
               f"字节位置 {exc.start}）", file=sys.stderr)
